@@ -1,0 +1,8 @@
+{
+  "name": "kr2-bootstrap-shop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Учебный магазин канцтоваров на Bootstrap для КР №2",
+  "scripts": { "test": "node tests/browser.cjs" },
+  "devDependencies": { "playwright": "1.62.1" }
+}

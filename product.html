@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Описание канцтоваров, характеристики, демонстрационная цена и переход к учебной заявке.">
+  <title>Карточка товара — Канцтовары</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css" id="theme-style">
+  <script src="vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
+  <script src="js/products.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body id="page-top">
+  <a class="visually-hidden-focusable skip-link" href="#main-content">Перейти к содержимому</a>
+  <header class="navbar navbar-expand-md bg-white border-bottom fixed-top" aria-label="Шапка сайта">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Канцтовары<span class="d-block small fw-normal text-secondary">учебный магазин</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Открыть меню"><span class="navbar-toggler-icon"></span></button>
+      <nav class="collapse navbar-collapse justify-content-end" id="main-nav" aria-label="Основная навигация"><ul class="navbar-nav gap-md-3"><li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li><li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li><li class="nav-item"><a class="nav-link" href="order.html">Заявка</a></li><li class="nav-item"><a class="nav-link" href="catalog.html#faq">Вопросы</a></li></ul></nav>
+    </div>
+  </header>
+  <main id="main-content" tabindex="-1">
+    <div class="container"><nav aria-label="Хлебные крошки" class="pt-4"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Главная</a></li><li class="breadcrumb-item active" aria-current="page">Товар</li></ol></nav>
+      <p class="alert alert-warning" id="product-error" role="alert" hidden>Такого товара нет. <a class="alert-link" href="catalog.html">Вернуться в каталог</a></p>
+      <article class="py-4" id="product-detail">
+        <div class="row g-4 align-items-start">
+          <div class="col-md-6"><img class="img-fluid w-100 product-detail__image border" id="product-image" src="images/notebook.jpg" alt="Тетрадь с листами в клетку" width="640" height="480"></div>
+          <div class="col-md-6"><span class="badge text-bg-light border mb-3" id="product-category">Бумага и хранение</span><h1 id="product-title" class="mb-3">Тетрадь в клетку</h1><p id="product-description">Тетрадь в клетку для конспектов и домашних заданий.</p><p class="fs-2 fw-semibold" id="product-price">80 ₽ / шт.</p><p class="text-secondary small">Демонстрационная цена. Реальные покупки недоступны.</p>
+            <div class="d-flex flex-wrap gap-2"><a class="btn btn-primary" id="product-order-link" href="order.html?id=notebook">Оформить заявку</a><button class="btn btn-outline-primary" id="product-quick-order" data-bs-toggle="modal" data-bs-target="#order-modal" data-product="notebook" type="button">Быстрая заявка</button></div>
+            <h2 class="h5 mt-4">Характеристики</h2><dl class="row mb-0">
+              <dt class="col-sm-5">Назначение</dt><dd class="col-sm-7" id="product-purpose">Конспекты и задания</dd>
+              <dt class="col-sm-5">Особенности</dt><dd class="col-sm-7" id="product-spec">Листы в клетку</dd>
+              <dt class="col-sm-5">Материал</dt><dd class="col-sm-7" id="product-material">Бумага, картонная обложка</dd>
+              <dt class="col-sm-5">Единица продажи</dt><dd class="col-sm-7" id="product-unit">шт.</dd>
+            </dl>
+            <a href="catalog.html#comparison">Сравнить с другими товарами</a>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="container"><div class="alert alert-success my-4" id="order-success" role="status" tabindex="-1" hidden></div></div>
+  </main>
+  <footer class="border-top py-4 mt-5"><div class="container d-flex flex-wrap justify-content-between gap-2 text-secondary small"><p class="mb-0">Я × МИРЭА · 2026</p><p class="mb-0">Учебный магазин · КР №2</p></div></footer>
+  <div class="modal fade" id="order-modal" tabindex="-1" aria-labelledby="order-modal-title" aria-describedby="order-modal-note" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable"><div class="modal-content">
+      <div class="modal-header"><h2 class="modal-title fs-5" id="order-modal-title">Быстрая заявка</h2><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Закрыть"></button></div>
+      <div class="modal-body"><p class="small text-secondary" id="order-modal-note">Учебная проверка. Данные никуда не отправляются и не сохраняются.</p>
+        <form class="row g-3" data-order-form action="#" method="post" novalidate>
+        <div class="col-12">
+          <label class="form-label" for="quick-product">Товар</label>
+          <select class="form-select" name="product" id="quick-product" required><option value="notebook">Тетрадь в клетку — 80 ₽</option><option value="folder">Папка для документов — 120 ₽</option><option value="pen">Ручка синяя — 40 ₽</option><option value="pencil">Карандаш HB — 30 ₽</option><option value="notepad">Блокнот A4 — 180 ₽</option><option value="paper">Бумага A4, 500 листов — 450 ₽</option><option value="eraser">Ластик — 50 ₽</option><option value="highlighter">Текстовыделитель — 90 ₽</option><option value="ruler">Линейка 30 см — 60 ₽</option><option value="sharpener">Точилка с контейнером — 70 ₽</option><option value="sticky-notes">Стикеры для заметок — 100 ₽</option><option value="clips">Скрепки, 100 штук — 75 ₽</option></select>
+        </div>
+        <div class="col-12 col-sm-6">
+          <label class="form-label" for="quick-quantity">Количество</label>
+          <div class="input-group"><input class="form-control" id="quick-quantity" name="quantity" type="number" min="1" max="99" step="1" value="1" required aria-describedby="quick-quantity-hint quick-quantity-error"><span class="input-group-text">ед.</span>
+          <div class="invalid-feedback" id="quick-quantity-error">Введите целое число от 1 до 99.</div></div>
+          <div class="form-text" id="quick-quantity-hint">От 1 до 99 единиц товара.</div>
+        </div>
+        <div class="col-12 col-sm-6 d-flex align-items-center"><p class="mb-0">Итого: <strong data-total aria-live="polite">80 ₽</strong></p></div>
+        <div class="col-12">
+          <label class="form-label" for="quick-name">Имя *</label>
+          <input class="form-control" id="quick-name" name="name" type="text" minlength="2" maxlength="80" autocomplete="given-name" required aria-describedby="quick-name-error">
+          <div class="invalid-feedback" id="quick-name-error">Введите имя: минимум два символа без крайних пробелов.</div>
+        </div>
+        <div class="col-12">
+          <label class="form-label" for="quick-email">E-mail *</label>
+          <input class="form-control" id="quick-email" name="email" type="email" autocomplete="email" required aria-describedby="quick-email-error">
+          <div class="invalid-feedback" id="quick-email-error">Введите корректный e-mail, например name@example.com.</div>
+        </div>
+        <div class="col-12">
+          <label class="form-label" for="quick-phone">Телефон *</label>
+          <input class="form-control" id="quick-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" placeholder="+7 (900) 000-00-00" required aria-describedby="quick-phone-hint quick-phone-error">
+          <div class="form-text" id="quick-phone-hint">Формат: +7 (900) 000-00-00.</div>
+          <div class="invalid-feedback" id="quick-phone-error">Введите телефон в указанном формате.</div>
+        </div>
+        <div class="col-12">
+          <label class="form-label" for="quick-comment">Комментарий</label>
+          <textarea class="form-control" id="quick-comment" name="comment" rows="3" maxlength="1000"></textarea>
+        </div>
+        <div class="col-12"><div class="form-check">
+          <input class="form-check-input" id="quick-agreement" name="agreement" type="checkbox" required aria-describedby="quick-agreement-error">
+          <label class="form-check-label" for="quick-agreement">Согласен на проверку введённых данных в учебном примере *</label>
+          <div class="invalid-feedback" id="quick-agreement-error">Подтвердите согласие для проверки формы.</div>
+        </div></div>
+        <div class="col-12"><p class="alert alert-danger mb-0" data-form-error role="alert" hidden>Проверьте отмеченные поля.</p></div>
+        <div class="col-12"><button class="btn btn-primary w-100" type="submit" disabled>Проверить заявку</button></div>
+      </form>
+      </div>
+      <div class="modal-footer"><a class="btn btn-outline-primary" id="full-order-link" href="order.html">Перейти на страницу заявки</a><button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Закрыть</button></div>
+    </div></div>
+  </div>
+  <a class="btn btn-primary back-to-top" href="#page-top">Наверх</a>
+  <noscript><div class="container py-3">Для фильтров, выбора варианта товара и проверки заявки включите JavaScript. Каталог, таблица и ссылки доступны без него.</div></noscript>
+</body>
+</html>
