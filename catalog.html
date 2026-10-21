@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Двенадцать канцтоваров, фильтры по цене и категории, сравнение характеристик и ответы на вопросы.">
+  <title>Каталог товаров — Канцтовары</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css" id="theme-style">
+  <script src="vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
+  <script src="js/products.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body id="page-top">
+  <a class="visually-hidden-focusable skip-link" href="#main-content">Перейти к содержимому</a>
+  <header class="navbar navbar-expand-md bg-white border-bottom fixed-top" aria-label="Шапка сайта">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Канцтовары<span class="d-block small fw-normal text-secondary">учебный магазин</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Открыть меню"><span class="navbar-toggler-icon"></span></button>
+      <nav class="collapse navbar-collapse justify-content-end" id="main-nav" aria-label="Основная навигация"><ul class="navbar-nav gap-md-3"><li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li><li class="nav-item"><a class="nav-link active" href="catalog.html" aria-current="page">Каталог</a></li><li class="nav-item"><a class="nav-link" href="order.html">Заявка</a></li><li class="nav-item"><a class="nav-link" href="catalog.html#faq">Вопросы</a></li></ul></nav>
+    </div>
+  </header>
+  <main id="main-content" tabindex="-1">
+    <div class="container"><nav aria-label="Хлебные крошки" class="pt-4"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Главная</a></li><li class="breadcrumb-item active" aria-current="page">Каталог</li></ol></nav>
+      <section class="py-4" aria-labelledby="catalog-title"><h1 class="mb-3" id="catalog-title">Каталог товаров</h1><p class="text-secondary">Двенадцать товаров для учёбы. Выберите категорию и цену или сравните характеристики.</p>
+        <div class="d-flex flex-wrap gap-4 mb-4"><a href="#comparison">Сравнение товаров</a><a href="#faq">Частые вопросы</a></div>
+        <div class="row g-4 align-items-start">
+          <aside class="col-md-4 col-lg-3 align-self-stretch" aria-labelledby="filters-title"><div class="card catalog-filter"><div class="card-body">
+            <h2 class="h5 mb-3" id="filters-title">Фильтры</h2>
+            <form id="filters-form" action="#" method="get">
+              <fieldset class="mb-4"><legend class="fs-6 fw-semibold">Категория</legend>
+                <div class="form-check mb-2"><input class="form-check-input" id="category-paper" name="category" value="paper" type="checkbox"><label class="form-check-label" for="category-paper">Бумага и хранение</label></div>
+                <div class="form-check"><input class="form-check-input" id="category-writing" name="category" value="writing" type="checkbox"><label class="form-check-label" for="category-writing">Для письма</label></div>
+                <p class="form-text mb-0">Без выбора — все товары.</p>
+              </fieldset>
+              <fieldset class="mb-4"><legend class="fs-6 fw-semibold">Цена, ₽</legend>
+                <label class="form-label" for="price-from">От</label><input class="form-control mb-3" id="price-from" name="price-from" type="number" min="0" step="1" placeholder="0">
+                <label class="form-label" for="price-to">До</label><input class="form-control" id="price-to" name="price-to" type="number" min="0" step="1" placeholder="450" aria-describedby="filters-error">
+              </fieldset>
+              <p class="alert alert-danger small" id="filters-error" role="alert" hidden></p>
+              <div class="d-grid gap-2"><button class="btn btn-primary" type="submit" disabled>Применить</button><button class="btn btn-outline-secondary" type="reset">Сбросить</button></div>
+            </form>
+          </div></div></aside>
+          <section class="col-md-8 col-lg-9" aria-labelledby="products-title"><h2 class="h5" id="products-title">Список товаров</h2><p class="text-secondary mb-4" id="results-count" role="status">Найдено товаров: 12</p>
+            <div class="row row-cols-1 row-cols-xl-3 row-cols-lg-2 g-4" id="catalog-grid">
+        <div class="col product-tile" data-product-id="notebook">
+          <article class="card h-100 product-card">
+            <img class="card-img-top product-card__image" src="images/notebook.jpg" alt="Тетрадь с листами в клетку" width="640" height="480" loading="lazy">
+            <div class="card-body d-flex flex-column">
+              <p class="small text-secondary mb-2">Бумага и хранение</p>
+              <h3 class="h5 card-title"><a class="product-card__title" href="product.html?id=notebook">Тетрадь в клетку</a></h3>
+              <p class="card-text flex-grow-1">Тетрадь в клетку для конспектов и домашних заданий.</p>
+              <p class="fs-4 fw-semibold mb-3">80 ₽ <span class="small fw-normal text-secondary">/ шт.</span></p>
+              <div class="d-grid gap-2">
+                <a class="btn btn-outline-primary" href="product.html?id=notebook">Подробнее<span class="visually-hidden">: Тетрадь в клетку</span></a>
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#order-modal" data-product="notebook">Заказать<span class="visually-hidden">: Тетрадь в клетку</span></button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col product-tile" data-product-id="folder">
+          <article class="card h-100 product-card">
+            <img class="card-img-top product-card__image" src="images/folder.png" alt="Бежевая папка для документов" width="640" height="480" loading="lazy">
+            <div class="card-body d-flex flex-column">
+              <p class="small text-secondary mb-2">Бумага и хранение</p>
+              <h3 class="h5 card-title"><a class="product-card__title" href="product.html?id=folder">Папка для документов</a></h3>
+              <p class="card-text flex-grow-1">Папка для распечаток, работ и других учебных материалов.</p>
+              <p class="fs-4 fw-semibold mb-3">120 ₽ <span class="small fw-normal text-secondary">/ шт.</span></p>
+              <div class="d-grid gap-2">
+                <a class="btn btn-outline-primary" href="product.html?id=folder">Подробнее<span class="visually-hidden">: Папка для документов</span></a>
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#order-modal" data-product="folder">Заказать<span class="visually-hidden">: Папка для документов</span></button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col product-tile" data-product-id="pen">
+          <article class="card h-100 product-card">
+            <img class="card-img-top product-card__image" src="images/pen.png" alt="Синяя шариковая ручка" width="640" height="480" loading="lazy">
+            <div class="card-body d-flex flex-column">
+              <p class="small text-secondary mb-2">Для письма</p>
+              <h3 class="h5 card-title"><a class="product-card__title" href="product.html?id=pen">Ручка синяя</a></h3>
+              <p class="card-text flex-grow-1">Шариковая ручка с синими чернилами для ежедневных записей.</p>
+              <p class="fs-4 fw-semibold mb-3">40 ₽ <span class="small fw-normal text-secondary">/ шт.</span></p>
+              <div class="d-grid gap-2">
+                <a class="btn btn-outline-primary" href="product.html?id=pen">Подробнее<span class="visually-hidden">: Ручка синяя</span></a>
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#order-modal" data-product="pen">Заказать<span class="visually-hidden">: Ручка синяя</span></button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col product-tile" data-product-id="pencil">
+          <article class="card h-100 product-card">
+            <img class="card-img-top product-card__image" src="images/pencil.jpg" alt="Карандаш HB с ластиком" width="640" height="480" loading="lazy">
+            <div class="card-body d-flex flex-column">
+              <p class="small text-secondary mb-2">Для письма</p>
+              <h3 class="h5 card-title"><a class="product-card__title" href="product.html?id=pencil">Карандаш HB</a></h3>
+              <p class="card-text flex-grow-1">Простой карандаш средней твёрдости для заметок и чертежей.</p>
+              <p class="fs-4 fw-semibold mb-3">30 ₽ <span class="small fw-normal text-secondary">/ шт.</span></p>
+              <div class="d-grid gap-2">
+                <a class="btn btn-outline-primary" href="product.html?id=pencil">Подробнее<span class="visually-hidden">: Карандаш HB</span></a>
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#order-modal" data-product="pencil">Заказать<span class="visually-hidden">: Карандаш HB</span></button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col product-tile" data-product-id="notepad">
+          <article class="card h-100 product-card">
+            <img class="card-img-top product-card__image" src="images/notepad.jpg" alt="Тёмные блокноты A4 в твёрдой обложке" width="640" height="480" loading="lazy">
+            <div class="card-body d-flex flex-column">
+              <p class="small text-secondary mb-2">Бумага и хранение</p>
+              <h3 class="h5 card-title"><a class="product-card__title" href="product.html?id=notepad">Блокнот A4</a></h3>
+              <p class="card-text flex-grow-1">Блокнот в твёрдой обложке для планов, записей и учебных заметок.</p>
+              <p class="fs-4 fw-semibold mb-3">180 ₽ <span class="small fw-normal text-secondary">/ шт.</span></p>
+              <div class="d-grid gap-2">
+                <a class="btn btn-outline-primary" href="product.html?id=notepad">Подробнее<span class="visually-hidden">: Блокнот A4</span></a>
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#order-modal" data-product="notepad">Заказать<span class="visually-hidden">: Блокнот A4</span></button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col product-tile" data-product-id="paper">
+          <article class="card h-100 product-card">
+            <img class="card-img-top product-card__image" src="images/paper.jpg" alt="Пачка белой бумаги A4, 500 листов" width="640" height="480" loading="lazy">
+            <div class="card-body d-flex flex-column">
+              <p class="small text-secondary mb-2">Бумага и хранение</p>
+              <h3 class="h5 card-title"><a class="product-card__title" href="product.html?id=paper">Бумага A4, 500 листов</a></h3>
+              <p class="card-text flex-grow-1">Белая бумага плотностью 80 г/м² для печати конспектов и учебных работ.</p>
+              <p class="fs-4 fw-semibold mb-3">450 ₽ <span class="small fw-normal text-secondary">/ пачка</span></p>
+              <div class="d-grid gap-2">
+                <a class="btn btn-outline-primary" href="product.html?id=paper">Подробнее<span class="visually-hidden">: Бумага A4, 500 листов</span></a>
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#order-modal" data-product="paper">Заказать<span class="visually-hidden">: Бумага A4, 500 листов</span></button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col product-tile" data-product-id="eraser">
+          <article class="card h-100 product-card">
+            <img class="card-img-top product-card__image" src="images/eraser.jpg" alt="Белый ластик в синей бумажной обёртке" width="640" height="480" loading="lazy">
+            <div class="card-body d-flex flex-column">
+              <p class="small text-secondary mb-2">Для письма</p>
+              <h3 class="h5 card-title"><a class="product-card__title" href="product.html?id=eraser">Ластик</a></h3>
+              <p class="card-text flex-grow-1">Ластик для удаления карандашных записей с бумаги.</p>
+              <p class="fs-4 fw-semibold mb-3">50 ₽ <span class="small fw-normal text-secondary">/ шт.</span></p>
+              <div class="d-grid gap-2">
+                <a class="btn btn-outline-primary" href="product.html?id=eraser">Подробнее<span class="visually-hidden">: Ластик</span></a>
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#order-modal" data-product="eraser">Заказать<span class="visually-hidden">: Ластик</span></button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col product-tile" data-product-id="highlighter">
+          <article class="card h-100 product-card">
+            <img class="card-img-top product-card__image" src="images/highlighter.jpg" alt="Розовый текстовыделитель с колпачком" width="640" height="480" loading="lazy">
+            <div class="card-body d-flex flex-column">
+              <p class="small text-secondary mb-2">Для письма</p>
+              <h3 class="h5 card-title"><a class="product-card__title" href="product.html?id=highlighter">Текстовыделитель</a></h3>
+              <p class="card-text flex-grow-1">Розовый маркер для выделения важных мест в конспектах.</p>
+              <p class="fs-4 fw-semibold mb-3">90 ₽ <span class="small fw-normal text-secondary">/ шт.</span></p>
+              <div class="d-grid gap-2">
+                <a class="btn btn-outline-primary" href="product.html?id=highlighter">Подробнее<span class="visually-hidden">: Текстовыделитель</span></a>
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#order-modal" data-product="highlighter">Заказать<span class="visually-hidden">: Текстовыделитель</span></button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col product-tile" data-product-id="ruler">
+          <article class="card h-100 product-card">
+            <img class="card-img-top product-card__image" src="images/ruler.jpg" alt="Пластиковая линейка Helix длиной 30 сантиметров" width="640" height="480" loading="lazy">
+            <div class="card-body d-flex flex-column">
+              <p class="small text-secondary mb-2">Для письма</p>
+              <h3 class="h5 card-title"><a class="product-card__title" href="product.html?id=ruler">Линейка 30 см</a></h3>
+              <p class="card-text flex-grow-1">Линейка для измерений, чертежей и аккуратного подчёркивания.</p>
+              <p class="fs-4 fw-semibold mb-3">60 ₽ <span class="small fw-normal text-secondary">/ шт.</span></p>
+              <div class="d-grid gap-2">
+                <a class="btn btn-outline-primary" href="product.html?id=ruler">Подробнее<span class="visually-hidden">: Линейка 30 см</span></a>
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#order-modal" data-product="ruler">Заказать<span class="visually-hidden">: Линейка 30 см</span></button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col product-tile" data-product-id="sharpener">
+          <article class="card h-100 product-card">
+            <img class="card-img-top product-card__image" src="images/sharpener.jpg" alt="Точилка Staedtler Noris с контейнером для стружки" width="640" height="480" loading="lazy">
+            <div class="card-body d-flex flex-column">
+              <p class="small text-secondary mb-2">Для письма</p>
+              <h3 class="h5 card-title"><a class="product-card__title" href="product.html?id=sharpener">Точилка с контейнером</a></h3>
+              <p class="card-text flex-grow-1">Точилка для карандашей с контейнером для сбора стружки.</p>
+              <p class="fs-4 fw-semibold mb-3">70 ₽ <span class="small fw-normal text-secondary">/ шт.</span></p>
+              <div class="d-grid gap-2">
+                <a class="btn btn-outline-primary" href="product.html?id=sharpener">Подробнее<span class="visually-hidden">: Точилка с контейнером</span></a>
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#order-modal" data-product="sharpener">Заказать<span class="visually-hidden">: Точилка с контейнером</span></button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col product-tile" data-product-id="sticky-notes">
+          <article class="card h-100 product-card">
+            <img class="card-img-top product-card__image" src="images/sticky-notes.jpg" alt="Кубик стикеров Pukka пастельных цветов" width="640" height="480" loading="lazy">
+            <div class="card-body d-flex flex-column">
+              <p class="small text-secondary mb-2">Бумага и хранение</p>
+              <h3 class="h5 card-title"><a class="product-card__title" href="product.html?id=sticky-notes">Стикеры для заметок</a></h3>
+              <p class="card-text flex-grow-1">Самоклеящиеся листочки для напоминаний, закладок и коротких заметок.</p>
+              <p class="fs-4 fw-semibold mb-3">100 ₽ <span class="small fw-normal text-secondary">/ блок</span></p>
+              <div class="d-grid gap-2">
+                <a class="btn btn-outline-primary" href="product.html?id=sticky-notes">Подробнее<span class="visually-hidden">: Стикеры для заметок</span></a>
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#order-modal" data-product="sticky-notes">Заказать<span class="visually-hidden">: Стикеры для заметок</span></button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col product-tile" data-product-id="clips">
+          <article class="card h-100 product-card">
+            <img class="card-img-top product-card__image" src="images/clips.jpg" alt="Упаковка из 100 металлических скрепок" width="640" height="480" loading="lazy">
+            <div class="card-body d-flex flex-column">
+              <p class="small text-secondary mb-2">Бумага и хранение</p>
+              <h3 class="h5 card-title"><a class="product-card__title" href="product.html?id=clips">Скрепки, 100 штук</a></h3>
+              <p class="card-text flex-grow-1">Металлические скрепки для соединения листов без проколов.</p>
+              <p class="fs-4 fw-semibold mb-3">75 ₽ <span class="small fw-normal text-secondary">/ уп.</span></p>
+              <div class="d-grid gap-2">
+                <a class="btn btn-outline-primary" href="product.html?id=clips">Подробнее<span class="visually-hidden">: Скрепки, 100 штук</span></a>
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#order-modal" data-product="clips">Заказать<span class="visually-hidden">: Скрепки, 100 штук</span></button>
+              </div>
+            </div>
+          </article>
+        </div>
+            </div><p class="alert alert-light border mt-4" id="catalog-empty" hidden>По этим условиям товаров нет. Измените цену или сбросьте фильтры.</p>
+          </section>
+        </div>
+      </section>
+      <section class="pt-5 section-anchor" id="comparison" aria-labelledby="comparison-title"><h2 class="h3 mb-3" id="comparison-title">Сравнение товаров</h2><p class="text-secondary" id="comparison-hint">На узком экране прокрутите таблицу по горизонтали. Все характеристики и цены приведены для учебного примера.</p>
+        <div class="table-responsive comparison" role="region" aria-label="Таблица сравнения товаров" aria-describedby="comparison-hint" tabindex="0"><table class="table table-striped align-middle mb-0 comparison__table">
+          <caption class="caption-top">Весь ассортимент: 12 товаров. Цены в рублях за указанную единицу.</caption>
+          <thead class="table-light"><tr><th scope="col">Товар</th><th scope="col">Категория</th><th scope="col">Назначение</th><th scope="col">Характеристики</th><th scope="col">Материал</th><th scope="col">Единица</th><th scope="col">Цена, ₽</th></tr></thead><tbody>
+<tr><th scope="row"><a href="product.html?id=notebook">Тетрадь в клетку</a></th><td>Бумага и хранение</td><td>Конспекты и задания</td><td>Листы в клетку</td><td>Бумага, картонная обложка</td><td>шт.</td><td>80</td></tr>
+<tr><th scope="row"><a href="product.html?id=folder">Папка для документов</a></th><td>Бумага и хранение</td><td>Хранение распечаток</td><td>Картонная обложка</td><td>Картон</td><td>шт.</td><td>120</td></tr>
+<tr><th scope="row"><a href="product.html?id=pen">Ручка синяя</a></th><td>Для письма</td><td>Ежедневные записи</td><td>Шариковая, синие чернила</td><td>Пластиковый корпус</td><td>шт.</td><td>40</td></tr>
+<tr><th scope="row"><a href="product.html?id=pencil">Карандаш HB</a></th><td>Для письма</td><td>Заметки и чертежи</td><td>Твёрдость HB, ластик</td><td>Дерево, графит</td><td>шт.</td><td>30</td></tr>
+<tr><th scope="row"><a href="product.html?id=notepad">Блокнот A4</a></th><td>Бумага и хранение</td><td>Планы и заметки</td><td>Формат A4, твёрдая обложка</td><td>Бумага, твёрдая обложка</td><td>шт.</td><td>180</td></tr>
+<tr><th scope="row"><a href="product.html?id=paper">Бумага A4, 500 листов</a></th><td>Бумага и хранение</td><td>Печать и копирование</td><td>A4, 80 г/м², 500 листов</td><td>Бумага</td><td>пачка</td><td>450</td></tr>
+<tr><th scope="row"><a href="product.html?id=eraser">Ластик</a></th><td>Для письма</td><td>Удаление карандашных записей</td><td>Для графита на бумаге</td><td>Синтетический материал</td><td>шт.</td><td>50</td></tr>
+<tr><th scope="row"><a href="product.html?id=highlighter">Текстовыделитель</a></th><td>Для письма</td><td>Выделение текста</td><td>Розовый цвет</td><td>Пластиковый корпус</td><td>шт.</td><td>90</td></tr>
+<tr><th scope="row"><a href="product.html?id=ruler">Линейка 30 см</a></th><td>Для письма</td><td>Измерения и чертежи</td><td>Длина 30 см</td><td>Переработанный пластик</td><td>шт.</td><td>60</td></tr>
+<tr><th scope="row"><a href="product.html?id=sharpener">Точилка с контейнером</a></th><td>Для письма</td><td>Заточка карандашей</td><td>Контейнер для стружки</td><td>Пластик, металлическое лезвие</td><td>шт.</td><td>70</td></tr>
+<tr><th scope="row"><a href="product.html?id=sticky-notes">Стикеры для заметок</a></th><td>Бумага и хранение</td><td>Напоминания и заметки</td><td>76 × 76 мм, пастельные цвета</td><td>Бумага с клеевым краем</td><td>блок</td><td>100</td></tr>
+<tr><th scope="row"><a href="product.html?id=clips">Скрепки, 100 штук</a></th><td>Бумага и хранение</td><td>Соединение листов</td><td>100 штук в упаковке</td><td>Металл</td><td>уп.</td><td>75</td></tr>
+</tbody></table></div></section>
+      <section class="py-5 section-anchor" id="faq" aria-labelledby="faq-title"><h2 class="h3 mb-4" id="faq-title">Часто задаваемые вопросы</h2><div class="accordion" id="faq-list">
+        <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-answer-1" aria-expanded="false" aria-controls="faq-answer-1">Как работают фильтры?</button></h3><div class="accordion-collapse collapse" id="faq-answer-1" data-bs-parent="#faq-list"><div class="accordion-body">Выберите одну или обе категории, укажите цену «От» и «До» и нажмите «Применить». Без выбранных категорий показываются товары обеих групп. Пустая граница цены не ограничивает поиск.</div></div></div>
+        <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-answer-2" aria-expanded="false" aria-controls="faq-answer-2">Что делать, если товары не найдены?</button></h3><div class="accordion-collapse collapse" id="faq-answer-2" data-bs-parent="#faq-list"><div class="accordion-body">Расширьте диапазон цены или нажмите «Сбросить»: все двенадцать товаров снова появятся в каталоге.</div></div></div>
+        <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-answer-3" aria-expanded="false" aria-controls="faq-answer-3">Где сравнить характеристики?</button></h3><div class="accordion-collapse collapse" id="faq-answer-3" data-bs-parent="#faq-list"><div class="accordion-body">В таблице «Сравнение товаров» выше указаны назначение, характеристики, материал, единица продажи и цена каждого товара. Таблица всегда показывает полный ассортимент, независимо от фильтров.</div></div></div>
+        <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-answer-4" aria-expanded="false" aria-controls="faq-answer-4">Как оформить учебную заявку?</button></h3><div class="accordion-collapse collapse" id="faq-answer-4" data-bs-parent="#faq-list"><div class="accordion-body">Нажмите «Заказать» в карточке для быстрой заявки или откройте подробную карточку и перейдите на страницу заявки. Товар подставится автоматически. Укажите количество, имя, e-mail и телефон, затем подтвердите согласие.</div></div></div>
+        <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-answer-5" aria-expanded="false" aria-controls="faq-answer-5">Можно ли оплатить товар и оформить доставку?</button></h3><div class="accordion-collapse collapse" id="faq-answer-5" data-bs-parent="#faq-list"><div class="accordion-body">Нет. Это учебный магазин. Форма только проверяет данные в браузере и показывает результат проверки. Данные никуда не отправляются, не сохраняются; оплаты и доставки нет.</div></div></div>
+        <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-answer-6" aria-expanded="false" aria-controls="faq-answer-6">Почему фильтр остаётся на месте при прокрутке?</button></h3><div class="accordion-collapse collapse" id="faq-answer-6" data-bs-parent="#faq-list"><div class="accordion-body">На широком экране фильтр закреплён под шапкой, чтобы можно было менять выбор рядом со списком товаров. На телефоне он расположен перед карточками и прокручивается вместе со страницей.</div></div></div>
+      </div></section>
+    </div>
+    <div class="container"><div class="alert alert-success my-4" id="order-success" role="status" tabindex="-1" hidden></div></div>
+  </main>
+  <footer class="border-top py-4 mt-5"><div class="container d-flex flex-wrap justify-content-between gap-2 text-secondary small"><p class="mb-0">Я × МИРЭА · 2026</p><p class="mb-0">Учебный магазин · КР №2</p></div></footer>
+  <div class="modal fade" id="order-modal" tabindex="-1" aria-labelledby="order-modal-title" aria-describedby="order-modal-note" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable"><div class="modal-content">
+      <div class="modal-header"><h2 class="modal-title fs-5" id="order-modal-title">Быстрая заявка</h2><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Закрыть"></button></div>
+      <div class="modal-body"><p class="small text-secondary" id="order-modal-note">Учебная проверка. Данные никуда не отправляются и не сохраняются.</p>
+        <form class="row g-3" data-order-form action="#" method="post" novalidate>
+        <div class="col-12">
+          <label class="form-label" for="quick-product">Товар</label>
+          <select class="form-select" name="product" id="quick-product" required><option value="notebook">Тетрадь в клетку — 80 ₽</option><option value="folder">Папка для документов — 120 ₽</option><option value="pen">Ручка синяя — 40 ₽</option><option value="pencil">Карандаш HB — 30 ₽</option><option value="notepad">Блокнот A4 — 180 ₽</option><option value="paper">Бумага A4, 500 листов — 450 ₽</option><option value="eraser">Ластик — 50 ₽</option><option value="highlighter">Текстовыделитель — 90 ₽</option><option value="ruler">Линейка 30 см — 60 ₽</option><option value="sharpener">Точилка с контейнером — 70 ₽</option><option value="sticky-notes">Стикеры для заметок — 100 ₽</option><option value="clips">Скрепки, 100 штук — 75 ₽</option></select>
+        </div>
+        <div class="col-12 col-sm-6">
+          <label class="form-label" for="quick-quantity">Количество</label>
+          <div class="input-group"><input class="form-control" id="quick-quantity" name="quantity" type="number" min="1" max="99" step="1" value="1" required aria-describedby="quick-quantity-hint quick-quantity-error"><span class="input-group-text">ед.</span>
+          <div class="invalid-feedback" id="quick-quantity-error">Введите целое число от 1 до 99.</div></div>
+          <div class="form-text" id="quick-quantity-hint">От 1 до 99 единиц товара.</div>
+        </div>
+        <div class="col-12 col-sm-6 d-flex align-items-center"><p class="mb-0">Итого: <strong data-total aria-live="polite">80 ₽</strong></p></div>
+        <div class="col-12">
+          <label class="form-label" for="quick-name">Имя *</label>
+          <input class="form-control" id="quick-name" name="name" type="text" minlength="2" maxlength="80" autocomplete="given-name" required aria-describedby="quick-name-error">
+          <div class="invalid-feedback" id="quick-name-error">Введите имя: минимум два символа без крайних пробелов.</div>
+        </div>
+        <div class="col-12">
+          <label class="form-label" for="quick-email">E-mail *</label>
+          <input class="form-control" id="quick-email" name="email" type="email" autocomplete="email" required aria-describedby="quick-email-error">
+          <div class="invalid-feedback" id="quick-email-error">Введите корректный e-mail, например name@example.com.</div>
+        </div>
+        <div class="col-12">
+          <label class="form-label" for="quick-phone">Телефон *</label>
+          <input class="form-control" id="quick-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" placeholder="+7 (900) 000-00-00" required aria-describedby="quick-phone-hint quick-phone-error">
+          <div class="form-text" id="quick-phone-hint">Формат: +7 (900) 000-00-00.</div>
+          <div class="invalid-feedback" id="quick-phone-error">Введите телефон в указанном формате.</div>
+        </div>
+        <div class="col-12">
+          <label class="form-label" for="quick-comment">Комментарий</label>
+          <textarea class="form-control" id="quick-comment" name="comment" rows="3" maxlength="1000"></textarea>
+        </div>
+        <div class="col-12"><div class="form-check">
+          <input class="form-check-input" id="quick-agreement" name="agreement" type="checkbox" required aria-describedby="quick-agreement-error">
+          <label class="form-check-label" for="quick-agreement">Согласен на проверку введённых данных в учебном примере *</label>
+          <div class="invalid-feedback" id="quick-agreement-error">Подтвердите согласие для проверки формы.</div>
+        </div></div>
+        <div class="col-12"><p class="alert alert-danger mb-0" data-form-error role="alert" hidden>Проверьте отмеченные поля.</p></div>
+        <div class="col-12"><button class="btn btn-primary w-100" type="submit" disabled>Проверить заявку</button></div>
+      </form>
+      </div>
+      <div class="modal-footer"><a class="btn btn-outline-primary" id="full-order-link" href="order.html">Перейти на страницу заявки</a><button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Закрыть</button></div>
+    </div></div>
+  </div>
+  <a class="btn btn-primary back-to-top" href="#page-top">Наверх</a>
+  <noscript><div class="container py-3">Для фильтров, выбора варианта товара и проверки заявки включите JavaScript. Каталог, таблица и ссылки доступны без него.</div></noscript>
+</body>
+</html>
